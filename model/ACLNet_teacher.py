@@ -5,17 +5,7 @@ import numpy as np
 import os
 from einops import rearrange
 
-# from backbone.depth_four import DepthNet
-# from backbone.swin_transformer import SwinTransformer
 from backbone.Shunted_Transformer.SSA import shunted_b, shunted_s, shunted_t
-# from backbone.P2T.p2t import p2t_large, p2t_base, p2t_small, p2t_tiny
-# from backbone.Segformer.Segformer import mit_b0, mit_b1, mit_b2, mit_b3, mit_b4, mit_b5
-# from backbone.BiFormer.biformer import *
-# from backbone.Dilateformer.dilateformer import *
-# from backbone.p2t import p2t_large
-# from backbone. import van_b4
-# from backbone.Uniformer.uniformer import UniFormer
-# from backbone.Wave_mlp import WaveMLP_T_dw
 
 stage1_channel = 64
 stage2_channel = 128
@@ -38,11 +28,6 @@ class convbnrelu(nn.Module):
 
 
 class LayerNorm(nn.Module):
-    r""" LayerNorm that supports two data formats: channels_last (default) or channels_first.
-    The ordering of the dimensions in the inputs. channels_last corresponds to inputs with
-    shape (batch_size, height, width, channels) while channels_first corresponds to inputs
-    with shape (batch_size, channels, height, width).
-    """
 
     def __init__(self, normalized_shape, eps=1e-6, data_format="channels_last"):
         super().__init__()
