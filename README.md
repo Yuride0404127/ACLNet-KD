@@ -3,7 +3,7 @@ Asymmetrical Contrastive Learning Network via Knowledge Distillation for No-Serv
 
 ## The model structure is as follows：
 
-![KD_2](./Picture/KD_2.jpg )
+![KD_2](https://sky-image-1302500563.cos.ap-nanjing.myqcloud.com/image/KD_2.jpg)
 
 
 
@@ -19,8 +19,12 @@ Cuda = 10.2
 
 ## Feature Maps
 
-The results graphs of our tests are saved in the [Baidu Clould]<https://pan.baidu.com/s/1d0poeuS5JQt4dDQ9FhibJg?pwd=cim9>  提取码：cim9 
+The results graphs of our tests are saved in the [Baidu Clould]<https://pan.baidu.com/s/1d0poeuS5JQt4dDQ9FhibJg?pwd=cim9>   提取码：cim9 
 
+
+## Training Weights
+
+All the training weights of our model will be saved in the: [Baidu Clould] <https://pan.baidu.com/s/13FeF2hgFtm6SrsEkhnT-lQ?pwd=dsy6>  提取码：dsy6 
 
 
 
