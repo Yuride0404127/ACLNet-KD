@@ -7,22 +7,19 @@ import cv2
 
 from KD_model_2.teacher_model_V4 import teacher_model_v4
 import matplotlib.pyplot as plt
-# from lr.复现的网络.BBS改 import BBSNet
+
 from config import opt
 from rgbd_dataset import test_dataset
 from torch.cuda import amp
-# from WBY_rail.xiugai3.student_uniformer import SRAA
-# from WBY_rail.foruth_net_shunted_new import *
 dataset_path = opt.test_path
 
 #set device for test
 os.environ["CUDA_VISIBLE_DEVICES"] = opt.gpu_id
 print('USE GPU:', opt.gpu_id)
 
-#load the model
+
 model = teacher_model_v4()
-# print('NOW USING:SFNet5_vgg')
-# ICNnet uses 180 epoch
+
 model.load_state_dict(torch.load('/media/yuride/date/KD_model2/Pth/ACLNet_T_SOD.pth'))
 model.cuda()
 model.eval()
@@ -53,19 +50,7 @@ for dataset in test_datasets:
         image = image.cuda()
         depth = depth.cuda()
         n, c, h, w = image.size()
-        # depth = depth.view(n, h, w, 1).repeat(1, 1, 1, c)
-        # depth = depth.transpose(3, 1)
-        # depth = depth.transpose(3, 2)
 
-        # n, c, h, w = image.size()  # batch_size, channels, height, weight
-        # Gabor_l = Gabor_l.view(n, h, w, 1).repeat(1, 1, 1, c)
-        # Gabor_l = Gabor_l.transpose(3, 1)
-        # Gabor_l = Gabor_l.transpose(3, 2)
-        #
-        # Gabor_r = Gabor_r.view(n, h, w, 1).repeat(1, 1, 1, c)
-        # Gabor_r = Gabor_r.transpose(3, 1)
-        # Gabor_r = Gabor_r.transpose(3, 2)
-        # with amp.autocast():
         res = model(image, depth)
         # res = model(image)
         res = torch.sigmoid(res[0])
